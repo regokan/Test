@@ -10,5 +10,19 @@ script:
 - docker container run -e CI=true create-react-app:dev npm run test
 
 after_script:
-- echo "SUCCESS!"
-# - docker image build -t create-react-app:prod -f Dockerfile.prod .
+  -  docker image build -t create-react-app:prod -f Dockerfile.prod .
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "test"
+  env: "Test-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-259246440996"
+  bucket_name: "test"
+  on: 
+    branch: master
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
+  
