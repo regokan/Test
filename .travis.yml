@@ -9,9 +9,6 @@ before_install:
 script:
 - docker container run -e CI=true regokan/create-react-app:dev npm run test
 
-after_script:
-  -  docker pull regokan/create-react-app:prod
-
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"

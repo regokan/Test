@@ -4,7 +4,7 @@ services:
     image: create-react-app:dev
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - "8080:3000"
     volumes:
@@ -16,6 +16,6 @@ services:
     image: create-react-app:prod
     build:
       context: .
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
     ports:
       - "80:80"
