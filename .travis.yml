@@ -1,5 +1,5 @@
 language: generic
-
+sudo: required
 services:
   - docker
 
@@ -18,7 +18,7 @@ deploy:
   app: "test"
   env: "Test-env"
   bucket_name: "elasticbeanstalk-ap-south-1-259246440996"
-  bucket_name: "test"
+  bucket_path: "test"
   on: 
     branch: master
   access_key_id:
